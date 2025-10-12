@@ -11,7 +11,7 @@ uk_bank_holidays_url = "https://www.gov.uk/bank-holidays.json"
 # Get the json file from the web and convert it to python dictionary
 with urllib.request.urlopen(uk_bank_holidays_url) as url: # Get the json file
     data = json.loads(url.read().decode()) # Convert the json file to a python list
-    print(data) # print the resulting file
+    
 
 
 # Split strings in python: https://www.w3schools.com/python/ref_string_split.asp
@@ -76,6 +76,7 @@ print("These are the holidays that happen in Northern Ireland in 2025:")
 for holiday in holidays_in_norethern_Ireland:
     print(f" - {holiday[0]} - {holiday[1]}") # Print the name of the holiday followed by the date
 
+print()
 
 scotland_holidays = GetHolidaysInUK(data, region = "scotland", include_holiday = True, include_date = False)
 england_and_wales_holidays = GetHolidaysInUK(data, region = "england-and-wales", include_holiday = True, include_date = False)
