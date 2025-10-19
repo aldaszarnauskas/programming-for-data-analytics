@@ -2,3 +2,4 @@ json
 urllib
 pandas
 matplotlib
+numpy
