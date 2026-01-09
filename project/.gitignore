@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+.AppleDouble
+Icon?
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Node.js / npm
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build folders
+dist/
+build/
+out/
+./programming-for-data-analytics.code-workspace
+
+# Editor folders
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv/
+
+# Logs & temp
+*.log
+tmp/
+temp/
