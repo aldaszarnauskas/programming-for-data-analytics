@@ -51,14 +51,14 @@ The purpose of this repository is to organize and showcase coursework completed 
 
 ---
 
-### [Project](./project/) Type 2 Diabetes Mellitus: Global Prevalence and Risk Factors
+### [Project](./project/): Type 2 Diabetes Mellitus: Global Prevalence and Risk Factors
 
 
 #### **Project Overview**
 This project explores the global prevalence of Type 2 Diabetes (T2D) through exploratory data analysis.
 
 #### **Introduction**
-In this project, we will examine global prevalence patterns of Type 2 Diabetes (T2D) and its associated risk factors. T2D is one of the fastest-growing diseases worldwide. It is estimated that among adults 20-79, T2D had increased by 74 million from 463 in 2019 (9% of population according to 9th edition of the IDF reporting) to 537 million (10.5% population) in 2021. And it is projected to affect 783 million adults age 20-79 by 2045[^1]. This chronic condition impacts multiple organs, including the nerves, heart, kidneys, blood vessels, and eyes, significantly reducing quality of life and life expectancy[^2]. Consequently, T2D places a substantial burden on healthcare systems globally. Diabetes caused at least USD 1 trillion dollars in health expenditure – a 338% increase over the last 17 years[^3] and it should be the primary concern for the regions with high disease burden.
+In this project, we will examine global prevalence patterns of Type 2 Diabetes (T2D) and its associated risk factors. T2D is one of the fastest-growing diseases worldwide. It is estimated that among adults 20-79, T2D had increased by 74 million from 463 in 2019 (9% of population according to 9th edition of the IDF reporting) to 537 million (10.5% population) in 2021. And it is projected to affect 783 million adults between age 20-79 by 2045[^1]. This chronic condition impacts multiple organs, including the nerves, heart, kidneys, blood vessels, and eyes, significantly reducing quality of life and life expectancy[^2]. Consequently, T2D places a substantial burden on healthcare systems globally. Diabetes caused at least USD 1 trillion dollars in health expenditure – a 338% increase over the last 17 years[^3] and it should be the primary concern for the regions with high disease burden.
 Hence, the goal of this project is to:
 1. Analyse prevalence patterns of T2D worldwide to identify countries with the highest rates where interventions are most needed.
 2. Investigate key risk factors contributing to T2D prevalence, that are most worth attention to reduce the prevalence of T2D, including:
@@ -81,30 +81,52 @@ To identify trends and risk factors, we utilise the following analytical tools:
 - Risk Factors of Type 2 Diabetes
   Multiple Regression Analysis
 
-#### Results
-**Exploratory Analysis: Age as a Risk Factor for Type 2 Diabetes Mellitus**  
+#### **Results**
 
-[Figure 1. Age as a Risk Factor for Type 2 Diabetes Mellitus](./plots/T2D_preva_2023_regions.png)
+> Exploratory Analysis: Age as a Risk Factor for Type 2 Diabetes Mellitus  
+
+Figure 1 shows that T2D prevalence is consistently higher in older age groups across all represented geographical regions. This trend highlights the need to age-standardize T2D values for more accurate country-to-country and region-to-region comparisons. Prevalence typically begins to increase at age 20, reaches its peak at age 70, and interestingly, begins to decline thereafter.
+
+![Figure 1. Age as a Risk Factor for Type 2 Diabetes Mellitus](./plots/T2D_preva_2023_regions.png)
 *Figure 1. The percentage T2D prevalence in 2023 in different geophraphical regions over various age groups.*
 
-**Exploratory Analysis: Age-Standardisation and Global Comparison**  
-   **Choropleth: Visualizing Global Prevalence**  
+> Exploratory Analysis: Age-Standardisation and Global Comparison  
+   > Choropleth: Visualizing Global Prevalence  
 
-   [Figure 2. The percentage of T2D prevalence on choropleth in 2023](./plots/T2D_preva_2023_choropleth.png)
+   Figure 2 highlights significantly higher prevalence rates in the Middle East, North Africa, the Caribbean, and parts of Oceania. Countries in these regions appear in the darkest shades, indicating the highest percentage of the population living with Type 2 Diabetes. Conversely, relatively lower rates are visible across parts of Sub-Saharan Africa and Eastern Europe.
+
+   ![Figure 2. The percentage of T2D prevalence on choropleth in 2023](./plots/T2D_preva_2023_choropleth.png)
    *Figure 2. The percentage of age-standardised T2D prevalence in 2023 on a choropleth.*
 
-   **Scatter ploth: T2D values Man vs Females**  
+   The highest T2D prevalence is observed in Oceania, Latin America and the Caribbean, and North Africa and the Middle East. Conversely, regions such as Sub-Saharan Africa and Eastern and Central Europe exhibit the lowest prevalence. While T2D rates are relatively similar between females and males in most countries, notable gender disparities emerge in the high-prevalence regions mentioned above, where certain countries show significant differences between the sexes.
 
-   [Figure 3. The percentage of T2D prevalence man vs females in 2023](./plots/T2D_preva_2023_scatter.png)
+   > Scatter ploth: T2D values Man vs Females  
+
+   ![Figure 3. The percentage of T2D prevalence man vs females in 2023](./plots/T2D_preva_2023_scatter.png)
    *Figure 3. Males vs Female percentage of age-standardised T2D prevalence in 2023 on a scatterploth.*
 
-   **Line ploth: Regions** 
+   > Line ploth: Regions  
 
-   [Figure 4. Line ploth: Regions](./plots/T2D_preva_1990-2023.png)
-   *Figure 4. The percentage of age-standardised T2D prevalence in 2023 on choropleth.*
+   Figure 4 shows a consistent upward trajectory in the prevalence of T2D over the last three decades. Globally, the number of people living with T2D has more than doubled since 1990, reflecting a transition from a relatively less common condition to a major global health epidemic.
+
+   ![Figure 4. Line ploth: Regions](./plots/T2D_preva_1990-2023.png)
+   *Figure 4. The percentage of age-standardised T2D prevalence in geographical world regions between 1990-2023.*
  
-**Risk Factors of Type 2 Diabetes**  
-   **Multiple Regression Analysis**  
+> Risk Factors of Type 2 Diabetes    
+   > Multiple Regression Analysis    
+
+   ![Figure 5. Correlation matrix](./plots/correlation_matrix.png)
+   *Figure 5. The correlation matrix shows correlation score between the independent variables: high SSB, high BMI,	low physical activity,	tobaco use.*
+   
+   **Table 1. Variance Inflation Factors of the Independent Variables**
+
+   | Rank | Feature                 | VIF    |
+   |------|-------------------------|--------|
+   | 1    | high_BMI                | 9.8894 |
+   | 2    | low_physical_activity   | 5.7468 |
+   | 3    | tobaco_use              | 5.3144 |
+   | 4    | high_SSB                | 3.2083 |
+
 
 
 #### Conclusion
