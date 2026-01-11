@@ -7,7 +7,7 @@
 
 ## Table of contents
 * [Overview](#overview)
-* [Assignments and Project Description](#assignments-and-project-description)
+* [Assignments and Project](#assignments-and-type-2-diabetes-mellitus-global-prevalence-and-risk-factors)
 * [Requirements](#Requirements)
 * [License](#License)
 * [Reference](#Reference)
@@ -22,7 +22,7 @@ The purpose of this repository is to organize and showcase coursework completed 
 
 ---
 
-## Assignments and Project Description
+## Assignments and Type 2 Diabetes Mellitus: Global Prevalence and Risk Factors
 
 ### [Assignments](./assignments/)
 1. **assignment02-bankholidays**  
@@ -51,7 +51,7 @@ The purpose of this repository is to organize and showcase coursework completed 
 
 ---
 
-### [Project](./project/): Type 2 Diabetes Mellitus: Global Prevalence and Risk Factors
+### [Type 2 Diabetes Mellitus: Global Prevalence and Risk Factors](./project/) 
 
 
 #### **Project Overview**
@@ -79,45 +79,54 @@ To identify trends and risk factors, we utilise the following analytical tools:
   Scatter ploth: T2D values Man vs Females
   Line ploth: Regions
 - Risk Factors of Type 2 Diabetes
+  Correlation Analysis of risk factors
+  Variance Inflation Factor analysis of independent variables
   Multiple Regression Analysis
 
 #### **Results**
+  
 
-> Exploratory Analysis: Age as a Risk Factor for Type 2 Diabetes Mellitus  
+**Exploratory Analysis: Age as a Risk Factor for Type 2 Diabetes Mellitus**  
 
 Figure 1 shows that T2D prevalence is consistently higher in older age groups across all represented geographical regions. This trend highlights the need to age-standardize T2D values for more accurate country-to-country and region-to-region comparisons. Prevalence typically begins to increase at age 20, reaches its peak at age 70, and interestingly, begins to decline thereafter.
 
-![Figure 1. Age as a Risk Factor for Type 2 Diabetes Mellitus](./plots/T2D_preva_2023_regions.png)
+![Figure 1. Age as a Risk Factor for Type 2 Diabetes Mellitus](./plots/T2D_preva_2023_regions.png)  
 *Figure 1. The percentage T2D prevalence in 2023 in different geophraphical regions over various age groups.*
 
-> Exploratory Analysis: Age-Standardisation and Global Comparison  
-   > Choropleth: Visualizing Global Prevalence  
+  
+**Exploratory Analysis: Age-Standardisation and Global Comparison**  
+   **Choropleth: Visualizing Global Prevalence**  
 
-   Figure 2 highlights significantly higher prevalence rates in the Middle East, North Africa, the Caribbean, and parts of Oceania. Countries in these regions appear in the darkest shades, indicating the highest percentage of the population living with Type 2 Diabetes. Conversely, relatively lower rates are visible across parts of Sub-Saharan Africa and Eastern Europe.
+   Figure 2 highlights higher prevalence rates in the Middle East, North Africa, the Caribbean, and parts of Oceania. Countries in these regions appear in the darkest shades, indicating the highest percentage of the population living with Type 2 Diabetes. Conversely, relatively lower rates are visible across parts of Sub-Saharan Africa and Eastern Europe.
 
-   ![Figure 2. The percentage of T2D prevalence on choropleth in 2023](./plots/T2D_preva_2023_choropleth.png)
+   ![Figure 2. The percentage of T2D prevalence on choropleth in 2023](./plots/T2D_preva_2023_choropleth.png)  
    *Figure 2. The percentage of age-standardised T2D prevalence in 2023 on a choropleth.*
 
    The highest T2D prevalence is observed in Oceania, Latin America and the Caribbean, and North Africa and the Middle East. Conversely, regions such as Sub-Saharan Africa and Eastern and Central Europe exhibit the lowest prevalence. While T2D rates are relatively similar between females and males in most countries, notable gender disparities emerge in the high-prevalence regions mentioned above, where certain countries show significant differences between the sexes.
 
-   > Scatter ploth: T2D values Man vs Females  
+   **Scatter ploth: T2D values Man vs Females**  
 
-   ![Figure 3. The percentage of T2D prevalence man vs females in 2023](./plots/T2D_preva_2023_scatter.png)
+   ![Figure 3. The percentage of T2D prevalence man vs females in 2023](./plots/T2D_preva_2023_scatter.png)  
    *Figure 3. Males vs Female percentage of age-standardised T2D prevalence in 2023 on a scatterploth.*
 
-   > Line ploth: Regions  
+   **Line ploth: Regions**  
 
    Figure 4 shows a consistent upward trajectory in the prevalence of T2D over the last three decades. Globally, the number of people living with T2D has more than doubled since 1990, reflecting a transition from a relatively less common condition to a major global health epidemic.
 
-   ![Figure 4. Line ploth: Regions](./plots/T2D_preva_1990-2023.png)
+   ![Figure 4. Line ploth: Regions](./plots/T2D_preva_1990-2023.png)  
    *Figure 4. The percentage of age-standardised T2D prevalence in geographical world regions between 1990-2023.*
- 
-> Risk Factors of Type 2 Diabetes    
-   > Multiple Regression Analysis    
+  
 
-   ![Figure 5. Correlation matrix](./plots/correlation_matrix.png)
-   *Figure 5. The correlation matrix shows correlation score between the independent variables: high SSB, high BMI,	low physical activity,	tobaco use.*
+**Risk Factors of Type 2 Diabetes**    
+   **Multiple Regression Analysis**    
+
+   The diagnostic results from Correlation Analysis (Figure 5) indicate no severe pairwise multicolinearity, as all coefficients remain below 0.6 threshold. This suggest that there are no redundant variables. In contrast, the Variance Inflation Factor analysis (Table 1), shows moderate multicollinearity for low physical activity (VIF = 5.75) and tobacco use (VIF = 5.31). Interestingly, high BMI (VIF = 9.89) is close to the high-risk threshold of 10. This means that high BMI has a substantial multicollinearity with other variables that can affect the following Multiple Regression Analysis.
+   The Multiple Regression Analysis (Table 2) confirms that all risk factors are statistically significat (p < 0.05) with T2D. High BMI has the most influence to the T2D value. For every 1% increase in the high BMI rate, T2D prevalence increases by approximately 0.16%. Notably, tabaco use and high SSB has a negative estimates. These results contradict the findings from the literature which identifies these two factors as a risk factors for T2. This discrepancy is likely caused by the high VIF of BMI (9.9). It means that high BMI likely takes all the predictive power of the two latter factors, thus making them negative. Therfore, the negative estimate of tabaco use and high SSB should be interpreted as the result of multicolinearity rather than a protective factors against the T2D.
    
+
+   ![Figure 5. Correlation matrix](./plots/correlation_matrix.png)  
+   *Figure 5. The correlation matrix shows correlation score between the independent variables: high SSB, high BMI,	low physical activity,	tobaco use.*
+
    **Table 1. Variance Inflation Factors of the Independent Variables**
 
    | Rank | Feature                 | VIF    |
@@ -127,10 +136,20 @@ Figure 1 shows that T2D prevalence is consistently higher in older age groups ac
    | 3    | tobaco_use              | 5.3144 |
    | 4    | high_SSB                | 3.2083 |
 
+   **Table 2. Multiple Regression Estimates of the Independent Variables**
+   | Parameter             | Estimate | Std. Err. | T-stat  | P-value | Lower CI | Upper CI |
+   | --------------------- | -------- | --------- | ------- | ------- | -------- | -------- |
+   | Intercept             | 1.7927   | 0.0887    | 20.215  | 0.0000  | 1.6189   | 1.9665   |
+   | high_SSB              | -0.0429  | 0.0028    | -15.430 | 0.0000  | -0.0483  | -0.0374  |
+   | high_BMI              | 0.1647   | 0.0039    | 42.219  | 0.0000  | 0.1571   | 0.1724   |
+   | low_physical_activity | 0.1485   | 0.0034    | 43.969  | 0.0000  | 0.1418   | 0.1551   |
+   | tobaco_use            | -0.0717  | 0.0034    | -21.381 | 0.0000  | -0.0782  | -0.0651  |
+
 
 
 #### Conclusion
 
+In this project, we identified age as a key risk factor for T2D, with prevalence beginning to rise at age 20, peaking at age 70, and declining thereafter in 2023. Furthermore, the countries with the highest T2D prevalence in 2023 are located in Oceania, Latin America and the Caribbean, and North Africa and the Middle East. Conversely, regions such as Sub-Saharan Africa and Eastern and Central Europe exhibit the lowest prevalence. While T2D rates are relatively similar between females and males in most countries, notable gender disparities emerge in the high-prevalence regions mentioned above, where certain countries show substantial differences between the sexes. In addition, Figure 4 demonstrates a consistent upward trajectory in T2D prevalence over the last three decades, reflecting a transition from a less common condition to a major global health epidemic. Meanwhile, Multiple Regression Analysis reveals that high BMI and low physical activity are the most influential risk factors affecting T2D prevalence.
 
 ---
 
