@@ -1,4 +1,6 @@
-# Programming for Data Analytics
+# Type 2 Diabetes: Global Prevalence and Risk Factor Analysis
+
+*Programming for Data Analytics module, ATU*
 
 ### Author
 **Aldas Zarnauskas**
